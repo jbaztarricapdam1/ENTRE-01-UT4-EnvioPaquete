@@ -21,7 +21,7 @@ public class Envio
      */
     public Envio()    {
         this.paquete1 = null;
-        this.paquete2 = null;
+        this.paquete2 = null; 
         this.paquete3 = null;
 
     }
@@ -55,8 +55,15 @@ public class Envio
      * (dependerá de cuántos paquetes estén a null)
      */
     public int getNumeroPaquetes() {
-        //TODO
-       return 0;
+        int paquetes = 0;
+        if (paquete1 != null) {
+            paquetes++;
+        } else if (paquete2 != null) {
+            paquetes++;
+        } else if (paquete3 != null) {
+            paquetes++;
+        }
+        return paquetes;
 
     }
 
@@ -65,8 +72,8 @@ public class Envio
      * (tiene exactamente 3 paquetes)
      */
     public boolean envioCompleto() {
-       //TODO
-       return false;
+        //TODO
+        return true;
 
     }
 
@@ -78,11 +85,15 @@ public class Envio
      * si se añade como primero, segundo o tercero (no han de quedar huecos)
      */
     public void addPaquete(Paquete paquete) {
-       //TODO
+        //TODO
+        if (envioCompleto()) {
+            System.out.println("No se admiten más paquetes en el envio");
+        } else {
+            
+        }
         
 
     }
-
     /**
      * Calcula y devuelve el coste total del envío
      * 
@@ -96,7 +107,7 @@ public class Envio
      */
     public double calcularCosteTotalEnvio() {
         //TODO
-       return 0;
+        return 0;
 
     }
 
@@ -106,8 +117,10 @@ public class Envio
      * (leer enunciado)
      */
     public String toString() {
-       //TODO
-       return null;
+        String str = "";
+        str = str + String.format("Numero de paquetes:", getNumeroPaquetes());
+        str = str + String.format("Descripccion del Paquete:"); 
+        return str;
     }
 
     /**
@@ -119,5 +132,4 @@ public class Envio
         System.out.println(this.toString());
     }
 
-    
 }
